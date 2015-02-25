@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @team.name
+%p
+  %b Victories:
+  = @team.victories
+%p
+  %b Losses:
+  = @team.losses
+%p
+  %b Creation date:
+  = @team.creation_date
+%p
+  %b Points:
+  = @team.points
+%p
+  %b Place:
+  = @team.place
+
+= link_to 'Edit', edit_team_path(@team)
+\|
+= link_to 'Back', teams_path

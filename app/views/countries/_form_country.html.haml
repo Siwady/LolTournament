@@ -1,0 +1,9 @@
+= render partial: "Errors/errors", locals: {obj: @countries}
+
+= form_for @countries do |c|
+
+  .field
+    = c.label :name, "Nombre "
+    = c.text_field :name
+  .field
+  = c.submit

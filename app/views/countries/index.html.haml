@@ -1,0 +1,11 @@
+%h1 Listado de Paises
+%p Paises agregados
+
+%table{border: "1"}
+  %tr
+    %th Nombre
+  = render @countries
+
+%br
+
+= link_to "Agregar Pais", new_country_path

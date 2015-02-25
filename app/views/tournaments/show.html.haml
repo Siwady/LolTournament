@@ -1,0 +1,25 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @tournament.name
+%p
+  %b Creation date:
+  = @tournament.created_at
+%p
+  %b Country:
+  = @tournament.country_id
+%p
+  %b Team limits:
+  = @tournament.team_limits
+%p
+  %b Prize:
+  = @tournament.prize
+
+=render partial: "teams", locals: { teams: @tournament.teams }
+
+%p= link_to "Nuevo equipo", new_tournament_team_path(@tournament)
+
+= link_to 'Edit', edit_tournament_path(@tournament)
+\|
+= link_to 'Back', tournaments_path

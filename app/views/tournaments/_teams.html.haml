@@ -1,0 +1,12 @@
+- if teams.any?
+  %h2 Equipos
+
+  %table{border:"1"}
+    %tr
+      %th Nombre
+
+    = render teams
+    
+  
+- else
+  %em Aun no tiene equipos

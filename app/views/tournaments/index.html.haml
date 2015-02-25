@@ -1,0 +1,14 @@
+%h1 Listing tournaments
+
+%table{border: "1"}
+  %tr
+    %th Nombre
+    %th Pais
+    %th Limite de equipos
+    
+  = render @tournaments
+
+
+%br
+
+= link_to 'New Tournament', new_tournament_path
