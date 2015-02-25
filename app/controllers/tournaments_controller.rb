@@ -7,6 +7,7 @@ class TournamentsController < ApplicationController
     @tournaments = Tournament.order(:name)
   end
 
+  
   # GET /tournaments/1
   # GET /tournaments/1.json
   def show
