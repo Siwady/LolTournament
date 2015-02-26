@@ -1,13 +1,31 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the top of the
- * compiled file, but it's generally better to create a new file per style scope.
- *
- *= require_self
- *= require_tree .
- */
+body { margin:114px 0 0 0; line-height:16px; font-family: Tahoma, Arial; background: url(/assets/body_top_bckg1.jpg) no-repeat center top #171c20; color:#bed7e6; font-size:11px;}
+a { color:#018BC1;}
+a:hover { text-decoration:none;}
+#header {}
+#logo { padding:30px 0 120px 0;color:#fff; text-align:center;}
+#logo a{ color:#fff; text-decoration:none; font-weight:bold; font-size:24px; text-transform:uppercase; }
+#menu {color:#fff; text-align:center; margin-bottom:62px;}
+#menu ul {text-align:center;list-style:none; padding:0;}
+#menu ul li {display:inline}
+#menu ul a { font-weight:bold; font-size:14px; text-decoration:none; color:#fff; background-color:#445d6c; padding:0 10px 2px 10px;}
+#menu ul a:hover { background-color:#f26513;}
+#main {background: url(/assets/body_all_bckg.jpg) repeat-y top center;}
+#content {width:780px; margin:0 auto;}
+#text { width:520px;}
+#text p { margin:7px 0 7px 0;}
+#text li {background:url(/assets/li.gif) no-repeat 0px 7px;}
+#sidebar {float:right; width:227px; background-color:#0b0e10; margin:10px 10px 0 0; }
+#sidebar_top { width:227px; height:40px; background:url(/assets/sidebar_top.jpg) no-repeat;}
+#sidebar_text { padding: 0 30px;}
+#sidebar_text p { margin:5px 0 5px 0;}
+#sidebar_bottom { width:227px; height:57px; background:url(/assets/sidebar_bottom.jpg) no-repeat;}
+#sidebar h2 { font-size:13px; text-transform:uppercase; color:#fff; margin:20px 0 0 0; padding:0; background:none;}
+h1 {margin:30px 0 0 0; padding:5px 0 7px 45px; text-transform:uppercase; font-size:24px; color:#fff; background:url(/assets/h1_bckg.jpg) no-repeat;}
+
+#footer {background:url(/assets/footer_bckg.jpg) no-repeat top center; height:102px; clear:both; width:780px; margin:0 auto; }
+#left_footer { float:left; padding:60px 0 0 30px; color:#fff; font-size:12px;}
+#left_footer a { color:#fff;}
+#left_footer a:hover { text-decoration:none;}
+#right_footer { float:right;  padding:60px 30px 0 0; color:#fff;  font-size:12px; text-align:right;}
+#right_footer a { color:#fff;}
+#right_footer a:hover { text-decoration:none;}
