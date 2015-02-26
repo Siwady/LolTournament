@@ -5,20 +5,22 @@
       %ul
         - @tournament.errors.full_messages.each do |msg|
           %li= msg
-
+  %br
   .field
     = f.label :name
     = f.text_field :name
-
+  %br
   .field
     = f.label :country_id, "Pais"
     = f.collection_select :country_id, Country.order(:name), :id, :name
-
+  %br
   .field
     = f.label :team_limits
     = f.number_field :team_limits
+  %br
   .field
     = f.label :prize
     = f.text_field :prize
+  %br
   .actions
     = f.submit 'Save'
