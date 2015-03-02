@@ -6,17 +6,23 @@
         - @player.errors.full_messages.each do |msg|
           %li= msg
   %br
-  .field
-    = f.label :name
-    = f.text_field :name
-  %br
-  .field
-    = f.label :email
-    = f.text_field :email
-  %br
-  .field
-    = f.label :nickname
-    = f.text_field :nickname
-  %br
-  .actions
-    = f.submit 'Save'
+  .form
+    .form_row
+      .field
+        .label
+          = f.label :name
+        = f.text_field :name, :class => "text_field"
+  
+    .form_row
+      .field
+        .label
+          = f.label :email
+        = f.text_field :email, :class => "text_field"
+    .form_row
+      .field
+        .label
+          = f.label :nickname
+        = f.text_field :nickname, :class => "text_field"
+    .form_row
+      .actions
+        = f.submit 'Save', :class => "form_submit"

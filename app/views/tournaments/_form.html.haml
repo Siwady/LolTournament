@@ -6,21 +6,31 @@
         - @tournament.errors.full_messages.each do |msg|
           %li= msg
   %br
-  .field
-    = f.label :name
-    = f.text_field :name
-  %br
-  .field
-    = f.label :country_id, "Pais"
-    = f.collection_select :country_id, Country.order(:name), :id, :name
-  %br
-  .field
-    = f.label :team_limits
-    = f.number_field :team_limits
-  %br
-  .field
-    = f.label :prize
-    = f.text_field :prize
-  %br
-  .actions
-    = f.submit 'Save'
+  .form
+    .form_row
+      .field
+        .label
+          = f.label :name
+        = f.text_field :name, :class => "text_field"
+      
+    .form_row
+      .field
+        .label
+          = f.label :country_id, "Pais"
+        = f.collection_select :country_id, Country.order(:name), :id, :name, {},{:class => "text_field"}
+      
+    .form_row
+      .field
+        .label
+          = f.label :team_limits
+        = f.number_field :team_limits, :class => "text_field"
+    
+    .form_row  
+      .field
+        .label
+          = f.label :prize
+        = f.text_field :prize, :class => "text_field"
+    
+    .form_row  
+      .actions
+        = f.submit 'Save', :class => "form_submit"

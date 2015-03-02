@@ -1,12 +1,13 @@
 %h1 Listing players
 %br
-%table{border: "1"}
-  %tr
-    %th Nombre
-    %th Email
-    %th Nickname
-  = render @players
-  
+.table
+  %table{border: "1"}
+    %tr
+      %th Nombre
+      %th Email
+      %th Nickname
+    = render @players
+    
 %br
 
 = link_to 'New Player', new_player_path
