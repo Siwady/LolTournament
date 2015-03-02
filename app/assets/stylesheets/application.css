@@ -37,6 +37,7 @@ input.label{width:100px;float:left;padding:10px 0 0px 0;font-size:20px; color:#5
 input.text_field{width:500px;height:34px;float:left;padding:0px 0px 0 4px; background-color:#F4F6F7; border:1px #90A9B7 solid; color:#000;-moz-border-radius:4px;-webkit-border-radius:4px;border-radius:4px;}
 input.form_submit{ float:left; clear:both; margin:0px 5px 0 0px;color:#fff;background: #7dc44e;-moz-border-radius:4px;-webkit-border-radius:4px;border-radius:4px;font-family:arial;font-size:15px;font-weight: bold;padding:8px 15px;text-align: center;cursor:pointer; border:none;text-shadow:1px 1px #4c9021;margin-left: 440px;}
 
+
 .table {
   margin:0px;padding:0px;
   width:100%;

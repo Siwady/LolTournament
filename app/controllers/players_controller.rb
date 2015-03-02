@@ -26,30 +26,25 @@ class PlayersController < ApplicationController
   def create
     @player = Player.new(player_params)
 
-    respond_to do |format|
-      if @player.save
-        redirect_to @player
-      else
-        render :new 
-      end
+    if @player.save
+      redirect_to players_path,flash: {notice: "Jugador creado exitosamente"}
+    else
+      render :new 
     end
+    
   end
 
-  # PATCH/PUT /players/1
-  # PATCH/PUT /players/1.json
   def update
-    respond_to do |format|
-      if @player.update(player_params)
-        redirect_to @player
-        
-      else
-        render :edit
-      end
+    @player=Player.find(params[:id])
+    if @player.update(player_params)
+      redirect_to players_path,flash: {notice: "Jugador actualizado exitosamente"}
+      
+    else
+      render :edit
     end
+    
   end
 
-  # DELETE /players/1
-  # DELETE /players/1.json
   def destroy
     @player.destroy
       redirect_to players_url

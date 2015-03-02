@@ -29,29 +29,27 @@ class TournamentsController < ApplicationController
   def create
     @tournament = Tournament.new(tournament_params)
 
-    respond_to do |format|
-      if @tournament.save
-        format.html { redirect_to @tournament, notice: 'Tournament was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @tournament }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @tournament.errors, status: :unprocessable_entity }
-      end
+    
+    if @tournament.save
+      redirect_to tournaments_path,flash: {notice: "Torneo creado exitosamente"}
+    else
+      render :new 
+      
     end
+    
   end
 
   # PATCH/PUT /tournaments/1
   # PATCH/PUT /tournaments/1.json
   def update
-    respond_to do |format|
-      if @tournament.update(tournament_params)
-        format.html { redirect_to @tournament, notice: 'Tournament was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @tournament.errors, status: :unprocessable_entity }
-      end
+    
+    if @tournament.update(tournament_params)
+      redirect_to tournament_path,flash: {notice: "Torneo actualizado exitosamente"}
+      
+    else
+      render :edit 
     end
+    
   end
 
   # DELETE /tournaments/1
