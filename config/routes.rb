@@ -6,6 +6,7 @@ Lolt::Application.routes.draw do
 
   resources :tournaments do 
     resources :teams, except: [:index] 
+    get "teams_batch", on: :member
   end 
 
   # The priority is based upon order of creation: first created -> highest priority.

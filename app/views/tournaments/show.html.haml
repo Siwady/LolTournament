@@ -1,22 +1,25 @@
-%p#notice= notice
-
+- if flash[:notice].present?
+  .notice= flash[:notice]
 %p
-  %b Name:
+  %strong Name:
   = @tournament.name
 %p
-  %b Creation date:
+  %strong Creation date:
   = @tournament.created_at
 %p
-  %b Country:
-  = @tournament.country_id
+  %strong Country:
+  = @tournament.country.name
 %p
-  %b Team limits:
+  %strong Team limits:
   = @tournament.team_limits
 %p
-  %b Prize:
+  %strong Prize:
   = @tournament.prize
 
+= render partial: "teams", locals: { teams: @tournament.teams }
+%p= link_to "Nuevo Team", new_tournament_team_path(@tournament)
+%p= link_to "Editar Teams", teams_batch_tournament_path(@tournament)
 
 = link_to 'Edit', edit_tournament_path(@tournament)
-\|
+
 = link_to 'Back', tournaments_path
