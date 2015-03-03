@@ -37,6 +37,7 @@ class TournamentsController < ApplicationController
       
     end
     
+    
   end
 
   # PATCH/PUT /tournaments/1
