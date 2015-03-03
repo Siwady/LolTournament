@@ -2,24 +2,24 @@
   .notice= flash[:notice]
 %p
   %strong Name:
-  = @tournament.name
+  = @tournaments.name
 %p
   %strong Creation date:
-  = @tournament.created_at
+  = @tournaments.created_at
 %p
   %strong Country:
-  = @tournament.country.name
+  = @tournaments.country.name
 %p
   %strong Team limits:
-  = @tournament.team_limits
+  = @tournaments.team_limits
 %p
   %strong Prize:
-  = @tournament.prize
+  = @tournaments.prize
 
-= render partial: "teams", locals: { teams: @tournament.teams }
-%p= link_to "Nuevo Team", new_tournament_team_path(@tournament)
-%p= link_to "Editar Teams", teams_batch_tournament_path(@tournament)
+= render partial: "teams", locals: { teams: @tournaments.teams }
+%p= link_to "Nuevo Team", new_tournament_team_path(@tournaments)
+%p= link_to "Editar Teams", teams_batch_tournament_path(@tournaments)
 
-= link_to 'Edit', edit_tournament_path(@tournament)
+= link_to 'Edit', edit_tournament_path(@tournaments)
 
 = link_to 'Back', tournaments_path

@@ -1,5 +1,5 @@
 class TournamentsController < ApplicationController
-  before_action :set_tournament, only: [:show, :edit, :update, :destroy]
+  
 
   
   def index
@@ -30,12 +30,12 @@ class TournamentsController < ApplicationController
   end
 
   def update
-    
-    if @tournament.update(tournament_params)
-      redirect_to @tournament,flash: {notice: "Torneo actualizado exitosamente"}
+    @tournaments = Tournament.find(params[:id])
+    if @tournaments.update(tournament_params)
+      redirect_to @tournaments,flash: {notice: "Torneo actualizado exitosamente"}
       
     else
-      render :set_tournament
+      render :teams_batch
     end
     
   end
@@ -46,14 +46,16 @@ class TournamentsController < ApplicationController
           
   end
 
+  def teams_batch
+    @tournaments = Tournament.find(params[:id])
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_tournament
-      @tournament = Tournament.find(params[:id])
-    end
+    
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tournament_params
-      params.require(:tournament).permit(:name, :creation_date, :country_id, :team_limits, :prize)
+      params.require(:tournament).permit!
     end
 end

@@ -1,0 +1,17 @@
+
+= form_for @tournaments do |f|
+
+  %table
+    %tr
+      %th Nombre
+      %th Victorias
+      %th Derrotas
+      %th Puntos
+    = f.fields_for :teams do |fteam|
+      %tr
+        %td= fteam.text_field :name
+        %td= fteam.text_field :victories
+        %td= fteam.text_field :losses
+        %td= fteam.text_field :points
+  = f.submit
+
