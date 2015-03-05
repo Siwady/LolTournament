@@ -1,5 +1,38 @@
 %h1 Editing player
 
-= render 'form'
+= form_for @player do |f|
+  - if @player.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@player.errors.count, "error")} prohibited this player from being saved:"
+      %ul
+        - @player.errors.full_messages.each do |msg|
+          %li= msg
+  %br
+  .form
+    .form_row
+      .field
+        .label
+          = f.label :name
+        = f.text_field :name, :class => "text_field"
+  
+    .form_row
+      .field
+        .label
+          = f.label :email
+        = f.text_field :email, :class => "text_field"
+    .form_row
+      .field
+        .label
+          = f.label :nickname
+        = f.text_field :nickname, :class => "text_field"
+    .form_row
+      .field
+        .label
+          = f.label :points
+        = f.text_field :points, :class => "text_field"
+
+    .form_row
+      .actions
+        = f.submit 'Save', :class => "form_submit"
 
 = link_to 'Back', players_path

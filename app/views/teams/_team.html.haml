@@ -1,3 +1,5 @@
 %tr
   %td= team.name
+  %td= team.victories
+  %td= team.losses
   %td= link_to 'Borrar', [team.tournament, team], method: :delete, data: { confirm: "Estas seguro?" }
