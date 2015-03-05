@@ -7,10 +7,10 @@ class TournamentsController < ApplicationController
   end
 
   def create
-    @tournament = Tournament.new(tournament_params)
+    @tournaments = Tournament.new(tournament_params)
     
-    if @tournament.save
-      redirect_to @tournament,flash: {notice: "Torneo creado exitosamente"}
+    if @tournaments.save
+      redirect_to @tournaments,flash: {notice: "Torneo creado exitosamente"}
     else
       render :new 
     end
@@ -21,7 +21,7 @@ class TournamentsController < ApplicationController
   end
 
   def new
-    @tournament = Tournament.new
+    @tournaments = Tournament.new
   end
 
  
