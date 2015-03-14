@@ -1,21 +1,28 @@
 Lolt::Application.routes.draw do
   
+  root 'homes#index'
+  
   resources :players
 
   resources :countries, except: [:show,:destroy] 
 
-  resources :users, except: [:index, :destroy]
+  
   
   resources :tournaments do 
     resources :teams, except: [:index] 
     get "teams_batch", on: :member
   end 
 
+  resources :users, except: [:index, :destroy]
+
+  get "/login" => "sessions#new"
+  post "/login" => "sessions#create"
+  delete "/logout" => "sessions#destroy"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'homes#index'
+  
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -31,7 +38,7 @@ Lolt::Application.routes.draw do
   #     member do
   #       get 'short'
   #       post 'toggle'
-  #     end
+  #    w end
   #
   #     collection do
   #       get 'sold'

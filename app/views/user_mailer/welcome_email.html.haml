@@ -1,0 +1,11 @@
+%h1 Bienvenido a nuestra pagina de torneos de League of legends
+%p 
+  Estimado
+  %strong= @user.nombre
+  ha creado una cuenta en Loltournaments
+%p
+  Tu usuario para poder login sera:
+  %strong= @user.email
+%p
+  Por favor entra a nuestra pagina y empieza a crear torneos para tus aleros
+  = link_to "League of legends tournaments", tournaments_path

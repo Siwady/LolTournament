@@ -1,0 +1,32 @@
+%h2 Nuevo Usuario
+%p Por favor ingrese sus datos
+= render partial: "Errors/errors", locals: {obj: @user}
+
+
+
+= form_for @user do |f|
+  .form
+    .form_row
+      .field
+        .label
+          = f.label :nombre, "Nombre"
+        = f.email_field :nombre, :class => "text_field"
+    .form_row
+      .field
+        .label
+          = f.label :email
+        = f.email_field :email, :class => "text_field"
+    .form_row
+      .field
+        .label
+          = f.label :password
+        = f.password_field :password, :class => "text_field"
+    .form_row
+      .field
+        .label
+          = f.label :password_confirmation
+        = f.password_field :password_confirmation, :class => "text_field"
+
+    .form_row  
+      .actions
+        = f.submit 'Save', :class => "form_submit"

@@ -1,5 +1,5 @@
 class TeamsController < ApplicationController
-  before_action :set_team, only: [:show, :edit, :update, :destroy]
+  
 
 
   def new
@@ -11,11 +11,13 @@ class TeamsController < ApplicationController
     @tournament=Tournament.find(params[:tournament_id])
     @team = @tournament.teams.build(team_params)
 
+    if @tournament.teams.count ==@tournament.team_limits
       if @team.save
         redirect_to  @tournament
       else
         render :new
       end
+    end
   end
 
   def edit
