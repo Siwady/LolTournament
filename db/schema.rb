@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150305044756) do
+ActiveRecord::Schema.define(version: 20150314015755) do
 
   create_table "countries", force: true do |t|
     t.string   "name"
@@ -23,11 +23,14 @@ ActiveRecord::Schema.define(version: 20150305044756) do
     t.string   "name"
     t.string   "email"
     t.string   "nickname"
+    t.integer  "teams_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "gender"
     t.integer  "points"
   end
+
+  add_index "players", ["teams_id"], name: "index_players_on_teams_id"
 
   create_table "team_players", force: true do |t|
     t.integer  "team_id"
@@ -43,10 +46,13 @@ ActiveRecord::Schema.define(version: 20150305044756) do
     t.string   "name"
     t.integer  "victories"
     t.integer  "losses"
+    t.integer  "tournaments_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "tournament_id"
   end
+
+  add_index "teams", ["tournaments_id"], name: "index_teams_on_tournaments_id"
 
   create_table "tournaments", force: true do |t|
     t.string   "name"
@@ -58,5 +64,13 @@ ActiveRecord::Schema.define(version: 20150305044756) do
   end
 
   add_index "tournaments", ["country_id"], name: "index_tournaments_on_country_id"
+
+  create_table "users", force: true do |t|
+    t.string   "nombre"
+    t.string   "email"
+    t.string   "password_digest"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

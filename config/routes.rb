@@ -4,6 +4,8 @@ Lolt::Application.routes.draw do
 
   resources :countries, except: [:show,:destroy] 
 
+  resources :users, except: [:index, :destroy]
+  
   resources :tournaments do 
     resources :teams, except: [:index] 
     get "teams_batch", on: :member
