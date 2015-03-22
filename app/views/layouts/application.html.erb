@@ -15,6 +15,7 @@
               <li><%=link_to "Torneos", tournaments_path%></li>
               <li><%=link_to "Jugadores", players_path%></li>
               <li><%=link_to "Paises", countries_path%></li>
+              <li><%=link_to "Ranking", ranking_home_path%></li>
               <li><%= link_to "LOGOUT", logout_path, :method=>:delete  %></li>
             <% else %>
               <li><%= link_to "LOGIN", login_path %></li>
